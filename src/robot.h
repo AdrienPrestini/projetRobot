@@ -23,11 +23,11 @@ public:
 	void saisir(Objet* o);
 	void poser();
 	int peser();
-	void rencontrerPlot(Plot* plot);
-	int evaluerPlot();
+	void rencontrerPlot(Plot* plot); 	/*A FAIRE*/
+	int evaluerPlot();			/*A FAIRE*/
 	void figer();
 	void repartir();
-	void afficher();
+	void afficher();			/*A FAIRE*/
 };
 
 #endif
