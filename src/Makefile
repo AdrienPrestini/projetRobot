@@ -19,8 +19,8 @@ FLAGS =-g -ansi -Wall -Wextra -Wold-style-cast -Woverloaded-virtual -D_DEBUG_ -s
 EXE_NAME= main.exe
 
 #can have several ones separated by spaces, only cpp files
-SOURCES = Main.cpp EtatRobot.cpp 
-#EtatRobotAVideFacePlot.cpp EtatRobotEnChargeFacePlot.cpp EtatRobotFige.cpp Objet.cpp Plot.cpp Robot.cpp
+SOURCES = Main.cpp EtatRobot.cpp EtatRobotEnRoute.cpp EtatRobotEnChargeFacePlot.cpp plot.cpp position.cpp robot.cpp Objet.cpp EtatRobotAVideFacePlot.cpp EtatRobotFige.cpp
+# EtatRobotEnChargeFacePlot.cpp EtatRobotFige.cpp Objet.cpp Plot.cpp Robot.cpp
 
 
 #PATH to extra header used in the project (when using libs not installed in the OS)
