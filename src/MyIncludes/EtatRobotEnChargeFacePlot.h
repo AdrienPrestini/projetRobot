@@ -14,14 +14,15 @@ class EtatRobotEnChargeFacePlot:public EtatRobotEnRoute {
 private:
 	static EtatRobotEnChargeFacePlot* singleton;
 public:
-	EtatRobotEnChargeFacePlot();
-	virtual ~EtatRobotEnChargeFacePlot();
 
 	//virtual EtatRobot peser();
 	//virtual EtatRobot poser();
 	//virtual EtatRobot evaluerPlot();
 	//virtual EtatRobot tourner();
 	static EtatRobotEnChargeFacePlot* getSingleton();
+
+	EtatRobotEnChargeFacePlot(){}
+	virtual ~EtatRobotEnChargeFacePlot(){}
 };
 
 #endif /* ETATROBOTENCHARGEFACEPLOT_H_ */

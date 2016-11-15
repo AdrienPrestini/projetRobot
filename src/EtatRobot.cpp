@@ -7,7 +7,6 @@
 
 #include "MyIncludes/EtatRobot.h"
 
-
 EtatRobot* EtatRobot::avancer(){throw erreur();}
 EtatRobot* EtatRobot::tourner(){throw erreur();}
 EtatRobot* EtatRobot::saisir(){throw saisirException();}

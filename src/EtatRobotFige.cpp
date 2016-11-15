@@ -9,14 +9,7 @@
 
 
 EtatRobotFige* EtatRobotFige::singleton = new EtatRobotFige;
-EtatRobotFige::EtatRobotFige() {
-	// TODO Auto-generated constructor stub
 
-}
-
-EtatRobotFige::~EtatRobotFige() {
-	// TODO Auto-generated destructor stub
-}
 
 EtatRobot* EtatRobotFige::repartir(){
 

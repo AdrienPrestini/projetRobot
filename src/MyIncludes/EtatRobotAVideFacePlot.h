@@ -23,6 +23,9 @@ public:
 	//virtual EtatRobot* tourner();
 	static EtatRobotAVideFacePlot* getSingleton();
 
+	EtatRobotAVideFacePlot(){}
+	virtual ~EtatRobotAVideFacePlot(){}
+
 };
 
 #endif /* ETATROBOTAVIDEFACEPLOT_H_ */

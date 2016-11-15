@@ -39,6 +39,9 @@ public:
 	virtual EtatRobot* rencontrerPlot();
 	virtual EtatRobot* figer();
 	virtual EtatRobot* afficher();
+
+	EtatRobot();
+	virtual ~EtatRobot();
 };
 
 #endif /* ETATROBOT_H_ */

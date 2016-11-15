@@ -23,7 +23,8 @@ private:
 public:
 	virtual EtatRobot* figer();
 
-	
+	EtatRobotEnRoute(){}
+	virtual ~EtatRobotEnRoute(){}
 };
 
 #endif /* ETATROBOTENROUTE_H_ */
