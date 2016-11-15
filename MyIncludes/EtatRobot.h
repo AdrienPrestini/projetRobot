@@ -33,14 +33,14 @@ public:
 	virtual ~EtatRobot();
 
 	//ces fonctions vont lever les exceptions dans EtatRobot:
-	virtual EtatRobot avancer();
-	virtual EtatRobot tourner();
-	virtual EtatRobot saisir();
-	virtual EtatRobot poser();
-	virtual EtatRobot peser();
-	virtual EtatRobot rencontrerPlot();
-	virtual EtatRobot figer();
-	virtual EtatRobot afficher();
+	virtual EtatRobot* avancer();
+	virtual EtatRobot* tourner();
+	virtual EtatRobot* saisir();
+	virtual EtatRobot* poser();
+	virtual EtatRobot* peser();
+	virtual EtatRobot* rencontrerPlot();
+	virtual EtatRobot* figer();
+	virtual EtatRobot* afficher();
 };
 
 #endif /* ETATROBOT_H_ */

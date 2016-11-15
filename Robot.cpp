@@ -7,10 +7,14 @@
 
 #include "MyIncludes/Robot.h"
 
+#include <iostream>
+using namespace std;
+
 void Robot::saisir(Objet o){
 	try{
-		monEtat=monEtat.saisir();
+		monEtat=monEtat->saisir();
 		this->obj=o;
-	}catch(exception& e)
+	}catch(EtatRobot::saisirException& e){
 		cout<< e.what() << endl;
+	}
 }

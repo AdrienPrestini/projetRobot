@@ -19,7 +19,7 @@
 class Robot {
 private:
 	std::string direction;
-	EtatRobot monEtat;
+	EtatRobot* monEtat;
 	Position maPosition;
 	Objet obj;
 	Plot plot;

@@ -19,7 +19,7 @@
 
 class EtatRobotEnRoute:public EtatRobot{
 public:
-	virtual EtatRobot figer();
+	virtual EtatRobot* figer();
 
 	
 };
