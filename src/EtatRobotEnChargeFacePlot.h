@@ -7,9 +7,14 @@ class EtatRobotEnChargeFacePlot : public EtatRobotEnRoute
 {
 
 private:
-	
+	static EtatRobotEnChargeFacePlot* singleton;
 public:
-	virtual EtatRobot* saisir();
+	virtual EtatRobot* poser();
+	virtual EtatRobot* peser();
+	virtual EtatRobot* evaluerPlot();
+	virtual EtatRobot* tourner();
+
+	static EtatRobotEnChargeFacePlot* getSingleton();
 
 
 };
