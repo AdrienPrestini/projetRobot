@@ -18,6 +18,8 @@
 #include "EtatRobot.h"
 
 class EtatRobotEnRoute:public EtatRobot{
+private:
+	
 public:
 	virtual EtatRobot* figer();
 

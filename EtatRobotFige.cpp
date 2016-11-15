@@ -7,6 +7,8 @@
 
 #include "MyIncludes/EtatRobotFige.h"
 
+
+EtatRobotFige* EtatRobotFige::singleton = new EtatRobotFige;
 EtatRobotFige::EtatRobotFige() {
 	// TODO Auto-generated constructor stub
 

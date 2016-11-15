@@ -7,6 +7,7 @@
 
 #include "MyIncludes/EtatRobotEnChargeFacePlot.h"
 
+EtatRobotEnChargeFacePlot* EtatRobotEnChargeFacePlot::singleton = new EtatRobotEnChargeFacePlot;
 EtatRobotEnChargeFacePlot::EtatRobotEnChargeFacePlot() {
 	// TODO Auto-generated constructor stub
 

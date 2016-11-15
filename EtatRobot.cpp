@@ -7,14 +7,6 @@
 
 #include "MyIncludes/EtatRobot.h"
 
-EtatRobot::EtatRobot() {
-	// TODO Auto-generated constructor stub
-
-}
-
-EtatRobot::~EtatRobot() {
-	// TODO Auto-generated destructor stub
-}
 
 EtatRobot* EtatRobot::avancer(){throw erreur();}
 EtatRobot* EtatRobot::tourner(){throw erreur();}

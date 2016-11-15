@@ -29,8 +29,6 @@ public:
 	public:
 		const char* what() const throw () {return "je ne peux pas saisir";}
 	};
-	EtatRobot();
-	virtual ~EtatRobot();
 
 	//ces fonctions vont lever les exceptions dans EtatRobot:
 	virtual EtatRobot* avancer();
