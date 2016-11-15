@@ -1,17 +1,14 @@
-/*
- * EtatRobot.cpp
- *
- *  Created on: 14 nov. 2016
- *      Author: epu
- */
+#include "EtatRobot.h"
+#include "ExceptionsRobot.h"
 
-#include "MyIncludes/EtatRobot.h"
+EtatRobot* EtatRobot::avancer(){throw ExceptionsRobot::Avancer_Exception();}
+EtatRobot* EtatRobot::tourner(){throw ExceptionsRobot::Tourner_Exception();}
+EtatRobot* EtatRobot::saisir(){throw ExceptionsRobot::Saisir_Exception();}
+EtatRobot* EtatRobot::poser(){throw ExceptionsRobot::Poser_Exception();}
+EtatRobot* EtatRobot::peser(){throw ExceptionsRobot::Peser_Exception();}
+EtatRobot* EtatRobot::rencontrerPlot(){throw ExceptionsRobot::RencontrerPlot_Exception();}
+EtatRobot* EtatRobot::figer(){throw ExceptionsRobot::Figer_Exception();}
 
-EtatRobot* EtatRobot::avancer(){throw erreur();}
-EtatRobot* EtatRobot::tourner(){throw erreur();}
-EtatRobot* EtatRobot::saisir(){throw saisirException();}
-EtatRobot* EtatRobot::poser(){throw erreur();}
-EtatRobot* EtatRobot::peser(){throw erreur();}
-EtatRobot* EtatRobot::rencontrerPlot(){throw erreur();}
-EtatRobot* EtatRobot::figer(){throw erreur();}
-EtatRobot* EtatRobot::afficher(){throw erreur();}
+EtatRobot* EtatRobot::afficher(){return this ;}
+
+EtatRobot* EtatRobot::repartir(){throw ExceptionsRobot::Repartir_Exception();}
