@@ -7,11 +7,11 @@ class EtatRobotAVideFacePlot : public EtatRobotEnRoute
 {
 
 private:
-	
+	static EtatRobotAVideFacePlot* singleton;
 public:
 	virtual EtatRobot* saisir();
 
-
+	static EtatRobotAVideFacePlot* getSingleton();
 };
 
 #endif

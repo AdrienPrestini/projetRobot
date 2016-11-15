@@ -4,17 +4,21 @@
 
 class EtatRobot{
 
+private:
+	
 public:
 
-	virtual EtatRobot* avancer();
-	virtual EtatRobot* tourner();
+	// virtual EtatRobot* avancer();
+	// virtual EtatRobot* tourner();
 	virtual EtatRobot* saisir();
-	virtual EtatRobot* poser();
-	virtual EtatRobot* peser();
-	virtual EtatRobot* rencontrerPlot();
+	// virtual EtatRobot* poser();
+	// virtual EtatRobot* peser();
+	// virtual EtatRobot* rencontrerPlot();
 	virtual EtatRobot* figer();
-	virtual EtatRobot* afficher();
+	// virtual EtatRobot* afficher();
 	virtual EtatRobot* repartir();
+
+	
 };
 
 
