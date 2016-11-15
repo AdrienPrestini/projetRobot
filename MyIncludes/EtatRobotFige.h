@@ -10,11 +10,16 @@
 
 #include "EtatRobot.h"
 class EtatRobotFige:public EtatRobot {
+private:
+	static EtatRobotFige* singleton;
 public:
 	EtatRobotFige();
 	virtual ~EtatRobotFige();
 
-	EtatRobot repartir();
+	EtatRobot* repartir();
+
+	
+	static EtatRobotFige* getSingleton();
 };
 
 #endif /* ETATROBOTFIGE_H_ */

@@ -6,9 +6,13 @@
  */
 
 #include "MyIncludes/EtatRobotAVideFacePlot.h"
+#include "MyIncludes/EtatRobotEnChargeFacePlot.h"
+ 
 
+EtatRobot* EtatRobotAVideFacePlot::saisir(){
+	return EtatRobotEnChargeFacePlot::getSingleton();
+}
 
-
-EtatRobot EtatRobotAVideFacePlot::saisir(){
-	return new EtatRobotEnChargeFacePlot();
+EtatRobotAVideFacePlot* EtatRobotAVideFacePlot::getSingleton(){
+	return singleton;
 }

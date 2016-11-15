@@ -13,11 +13,15 @@
 
 class EtatRobotAVideFacePlot : public EtatRobotEnRoute {
 public:
+private:
+	static EtatRobotAVideFacePlot* singleton;
+public:
 
 
-	virtual EtatRobot evaluerPlot();
-	virtual EtatRobot saisir();
-	virtual EtatRobot tourner();
+	//virtual EtatRobot* evaluerPlot();
+	virtual EtatRobot* saisir();
+	//virtual EtatRobot* tourner();
+	static EtatRobotAVideFacePlot* getSingleton();
 
 };
 

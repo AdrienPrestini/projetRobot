@@ -16,3 +16,8 @@ EtatRobotEnChargeFacePlot::~EtatRobotEnChargeFacePlot() {
 	// TODO Auto-generated destructor stub
 }
 
+
+
+EtatRobotEnChargeFacePlot* EtatRobotEnChargeFacePlot::getSingleton(){
+	return singleton;
+}

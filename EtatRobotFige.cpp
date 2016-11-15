@@ -16,6 +16,10 @@ EtatRobotFige::~EtatRobotFige() {
 	// TODO Auto-generated destructor stub
 }
 
-EtatRobot EtatRobotFige::repartir(){
+EtatRobot* EtatRobotFige::repartir(){
+
 	
+}
+EtatRobotFige* EtatRobotFige::getSingleton(){
+	return singleton;
 }
