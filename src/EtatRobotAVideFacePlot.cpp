@@ -7,6 +7,5 @@ EtatRobotAVideFacePlot* EtatRobotAVideFacePlot::getSingleton(){
 }
 
 EtatRobot* EtatRobotAVideFacePlot::saisir(){
-	EtatRobotEnChargeFacePlot e;
-	return e.getSingleton();
+	return chargefaceplot_singleton;
 }

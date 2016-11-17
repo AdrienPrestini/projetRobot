@@ -35,6 +35,9 @@ SOURCEHEADERS = $(SOURCES:.cpp=.h)
 $(EXE_NAME): $(LINKOBJ)
 	$(LINKER) $(LINKOBJ) $(INC_PATHS) $(LIBS) -o $(EXE_NAME) $(FLAGS)
 
+EtatRobotEnChargeFacePlot.o: EtatRobotEnChargeFacePlot.h EtatRobotEnChargeFacePlot.cpp EtatRobotAVideFacePlot.o
+	$(COMPILER) -g -c EtatRobotEnChargeFacePlot.cpp -o EtatRobotEnChargeFacePlot.o $(INC_PATHS) $(FLAGS)
+
 %.o: %.cpp %.h
 	$(COMPILER) -g -c $< -o $@ $(INC_PATHS) $(FLAGS)
 
