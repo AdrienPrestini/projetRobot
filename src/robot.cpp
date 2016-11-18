@@ -20,6 +20,7 @@ void Robot::saisir(Objet* o){
 	try{
 		(this->mon_etat)->saisir();
 		this->ptr_obj=o;
+		notify();
 	}catch(ExceptionsRobot::Saisir_Exception& e){
 		cout<< e.what()<<endl;
 	}
@@ -28,6 +29,7 @@ void Robot::saisir(Objet* o){
 void Robot::figer(){
 	try{
 		(this->mon_etat)->figer();
+		notify();
 	}catch(ExceptionsRobot::Figer_Exception& e){
 		cout<< e.what()<<endl;
 	}
@@ -36,6 +38,7 @@ void Robot::figer(){
 void Robot::repartir(){
 	try{
 		(this->mon_etat)->repartir();
+		notify();
 	}catch(ExceptionsRobot::Repartir_Exception& e){
 		cout<< e.what()<<endl;
 	}
