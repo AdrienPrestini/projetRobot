@@ -1,11 +1,13 @@
 #include "EtatRobotAVideFacePlot.h"
 #include "EtatRobotEnChargeFacePlot.h"
+#include "EtatRobotAVide.h"
 
+EtatRobotAVideFacePlot* EtatRobotAVideFacePlot::instance = new EtatRobotAVideFacePlot;
 
 EtatRobotAVideFacePlot* EtatRobotAVideFacePlot::getSingleton(){
-	return  EtatRobotAVideFacePlot::singleton;
+	return instance;
 }
 
 EtatRobot* EtatRobotAVideFacePlot::saisir(){
-	return chargefaceplot_singleton;
+	return EtatRobotEnChargeFacePlot::getSingleton();
 }

@@ -2,15 +2,20 @@
 #ifndef ETAT_ROBOT_FIGE_H
 #define ETAT_ROBOT_FIGE_H
 
-#include "EtatRobotEnRoute.h"
+#include "EtatRobot.h"
+class EtatRobotEnRoute;
 
-class EtatRobotFige : public EtatRobotEnRoute
+class EtatRobotFige : public EtatRobot
 {
 
 private:
-	
+	EtatRobotEnRoute* etatPrecedent;
+	static EtatRobotFige* instance;
 public:
-	//virtual EtatRobot* saisir();
+	
+	//EtatRobot* repartir();
+	void putEtatPrecedent(EtatRobotEnRoute* e);
+	static EtatRobotFige* getSingleton();
 
 
 };

@@ -3,6 +3,8 @@
 
 #include "EtatRobot.h"
 
+class EtatRobotFige;
+
 class EtatRobotEnRoute : public EtatRobot{
 
 public:

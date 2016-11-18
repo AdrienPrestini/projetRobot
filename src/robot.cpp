@@ -1,4 +1,5 @@
 #include "robot.h"
+#include "ExceptionsRobot.h"
 #include <string>
 #include <iostream>
 #include <cstddef>
@@ -16,7 +17,7 @@ void Robot::saisir(Objet* o){
 	try{
 		(this->mon_etat)->saisir();
 		this->ptr_obj=o;
-	}catch(exception& e){
+	}catch(ExceptionsRobot::Saisir_Exception& e){
 		cout<< e.what()<<endl;
 	}
 }
@@ -24,7 +25,7 @@ void Robot::saisir(Objet* o){
 void Robot::figer(){
 	try{
 		(this->mon_etat)->figer();
-	}catch(exception& e){
+	}catch(ExceptionsRobot::Figer_Exception& e){
 		cout<< e.what()<<endl;
 	}
 }
@@ -32,12 +33,12 @@ void Robot::figer(){
 void Robot::repartir(){
 	try{
 		(this->mon_etat)->repartir();
-	}catch(exception& e){
+	}catch(ExceptionsRobot::Repartir_Exception& e){
 		cout<< e.what()<<endl;
 	}
 }
 
-void Robot::avancer(int x, int y){
+/*void Robot::avancer(int x, int y){
 	try{
 		(this->mon_etat)->avancer();
 		this->pos.setX(x);
@@ -82,3 +83,4 @@ int Robot::peser(){
 	return 0;
 }
 
+*/

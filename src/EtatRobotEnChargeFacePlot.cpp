@@ -1,20 +1,24 @@
 #include "EtatRobotEnChargeFacePlot.h"
 #include "EtatRobotAVideFacePlot.h"
+#include "EtatRobotEnCharge.h"
+
+EtatRobotEnChargeFacePlot* EtatRobotEnChargeFacePlot::instance = new EtatRobotEnChargeFacePlot;
+
 
 EtatRobotEnChargeFacePlot* EtatRobotEnChargeFacePlot::getSingleton(){
-	return  EtatRobotEnChargeFacePlot::singleton;
+	return instance;
 }
 
 
-EtatRobot* EtatRobotEnChargeFacePlot::poser(){
-	return avidefaceplot_singleton;
+/*EtatRobot* EtatRobotEnChargeFacePlot::poser(){
+	return EtatRobotAVideFacePlot::getSingleton();
 }
 
 EtatRobot* EtatRobotEnChargeFacePlot::peser(){
-	 return singleton->getSingleton();
+	 return this;
 }
 
 
 EtatRobot* EtatRobotEnChargeFacePlot::evaluerPlot(){
-	 return singleton->getSingleton();
-}
+	 return this;
+}*/

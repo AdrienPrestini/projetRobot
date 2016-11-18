@@ -1,47 +1,43 @@
-#=======================================================================
-# Basic C++: makefile example to use as a reminder or as a template
-#-----------------------------------------------------------------------
-# Julien DeAntoni --- No Copyright 2016
-# $Id: convenient Makefile but muist be tuned for templated project 
-#      v0.2 2016/09/06
-#=======================================================================
-
-#only ok for project with no templated classes
-
-#compiler
-COMPILER = g++
-#linker
-LINKER =g++
-
-#options for linker and compiler
-FLAGS =-g -ansi -Wall -Wextra -Wold-style-cast -Woverloaded-virtual -D_DEBUG_ -std=c++11
-
-EXE_NAME= main.exe
-
-#can have several ones separated by spaces, only cpp files
-SOURCES = Main.cpp EtatRobot.cpp EtatRobotEnRoute.cpp EtatRobotEnChargeFacePlot.cpp plot.cpp position.cpp robot.cpp Objet.cpp EtatRobotAVideFacePlot.cpp EtatRobotFige.cpp
-# EtatRobotEnChargeFacePlot.cpp EtatRobotFige.cpp Objet.cpp Plot.cpp Robot.cpp
+SOURCES = Main.cpp robot.cpp position.cpp plot.cpp Objet.cpp EtatRobot.cpp EtatRobotFige.cpp EtatRobotEnRoute.cpp EtatRobotEnChargeFacePlot.cpp EtatRobotEnCharge.cpp EtatRobotAVideFacePlot.cpp EtatRobotAVide.cpp 
+OBJECTS = $(SOURCES:.cpp=.o)
 
 
-#PATH to extra header used in the project (when using libs not installed in the OS)
-INC_PATHS= -I
 
-#extra libs used in the project (for instance -lpthread)
-LIBS	= -L 
+%: %.o
+		$(LINK.cpp) -o $@ $^
 
-LINKOBJ	= $(SOURCES:.cpp=.o)
-SOURCEHEADERS = $(SOURCES:.cpp=.h)
 
-$(EXE_NAME): $(LINKOBJ)
-	$(LINKER) $(LINKOBJ) $(INC_PATHS) $(LIBS) -o $(EXE_NAME) $(FLAGS)
+executable_Robot : $(OBJECTS)
+		g++ -o $@ $^
+		rm -f *.o
 
-EtatRobotEnChargeFacePlot.o: EtatRobotEnChargeFacePlot.h EtatRobotEnChargeFacePlot.cpp EtatRobotAVideFacePlot.o
-	$(COMPILER) -g -c EtatRobotEnChargeFacePlot.cpp -o EtatRobotEnChargeFacePlot.o $(INC_PATHS) $(FLAGS)
+###
 
-%.o: %.cpp %.h
-	$(COMPILER) -g -c $< -o $@ $(INC_PATHS) $(FLAGS)
-
-# cleanup
 clean:
-	rm -f $(LINKOBJ)
+		 rm -f *~ *.o *.bak
 
+depend:
+		makedepend $(SOURCES)
+
+
+# Regles pour construire les .o
+
+Main.o: robot.h EtatRobot.h plot.h position.h Objet.h
+Main.o: EtatRobotAVide.h EtatRobotEnRoute.h EtatRobotFige.h
+robot.o: robot.h EtatRobot.h plot.h position.h Objet.h
+robot.o: EtatRobotAVide.h EtatRobotEnRoute.h EtatRobotFige.h
+Objet.o: Objet.h
+position.o: position.h
+plot.o: plot.h
+
+EtatRobot.o: EtatRobot.h EtatRobotAVide.h EtatRobotEnRoute.h EtatRobotFige.h
+EtatRobotFige.o: EtatRobotFige.h EtatRobot.h EtatRobotAVide.h EtatRobotEnRoute.h
+EtatRobotEnRoute.o: EtatRobotEnRoute.h EtatRobot.h EtatRobotFige.h
+EtatRobotEnChargeFacePlot.o: EtatRobotEnChargeFacePlot.h EtatRobotEnRoute.h EtatRobot.h
+EtatRobotEnChargeFacePlot.o: EtatRobotFige.h EtatRobotEnCharge.h EtatRobotAVideFacePlot.h
+EtatRobotEnCharge.o: EtatRobotEnCharge.h EtatRobotEnRoute.h EtatRobot.h EtatRobotFige.h
+EtatRobotEnCharge.o: EtatRobotEnChargeFacePlot.h
+EtatRobotAVideFacePlot.o: EtatRobotAVideFacePlot.h EtatRobotEnRoute.h EtatRobot.h EtatRobotFige.h
+EtatRobotAVideFacePlot.o: EtatRobotAVide.h EtatRobotEnChargeFacePlot.h
+EtatRobotAVide.o: EtatRobotAVide.h EtatRobotEnRoute.h EtatRobot.h EtatRobotFige.h
+EtatRobotAVide.o: EtatRobotAVideFacePlot.h
