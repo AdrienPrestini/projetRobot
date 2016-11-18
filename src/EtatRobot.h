@@ -1,7 +1,7 @@
 #ifndef _ETAT_ROBOT_H_
 #define _ETAT_ROBOT_H_
 
-
+#include <string>
 class EtatRobot{
 
 private:
@@ -20,6 +20,7 @@ public:
 	virtual EtatRobot* repartir();
 
 	static EtatRobot* getPremier();
+	virtual std::string getNom();
 };
 
 

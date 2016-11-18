@@ -1,15 +1,16 @@
 #include "position.h"
 
-Position::Position(int x, int y){
-	this->x=x;
-	this->y=y;
+#include <ostream>
+Position::Position(const Position& p){
+	this->x=p.getX();
+	this->y=p.getY();
 }
 
-int Position::getX(){
+int Position::getX()const{
 	return this->x;
 }
 
-int Position::getY(){
+int Position::getY()const{
 	return this->y;
 }
 
@@ -19,4 +20,8 @@ void Position::setX(int x){
 
 void Position::setY(int y){
 	this->y=y;
+}
+
+std::ostream& operator<<(std::ostream& os, const Position& pos){
+	return os << "Position: (" << pos.getX() << ";" << pos.getY() << ")" << std::endl;
 }

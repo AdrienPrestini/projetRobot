@@ -18,3 +18,7 @@ EtatRobot* EtatAVide::rencontrerPlot() {
 EtatRobotAVide* EtatRobotAVide::getSingleton() {
 	return instance;
 }
+
+std::string EtatRobotAVide::getNom(){
+	return "Etat à Vide";
+}

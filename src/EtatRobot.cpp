@@ -19,3 +19,7 @@ EtatRobot* EtatRobot::getPremier(){
 	premierEtat = EtatRobotAVide::getSingleton();
 	return premierEtat;
 }
+
+std::string EtatRobot::getNom(){
+	return "";
+}

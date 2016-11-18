@@ -1,6 +1,6 @@
 #ifndef _ETAT_ROBOT_A_VIDE_H_
 #define _ETAT_ROBOT_A_VIDE_H_
-
+#include <string>
 #include "EtatRobotEnRoute.h"
 
 class EtatRobotAVide : public EtatRobotEnRoute {
@@ -16,6 +16,7 @@ public:
 	//virtual EtatRobot* rencontrerPlot();
 
 	static EtatRobotAVide* getSingleton();
+	virtual std::string getNom();
 };
 
 #endif

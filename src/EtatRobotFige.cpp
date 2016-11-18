@@ -9,3 +9,6 @@ void EtatRobotFige::putEtatPrecedent(EtatRobotEnRoute* e){
 EtatRobotFige* EtatRobotFige::getSingleton(){
 	return instance;
 }
+std::string EtatRobotFige::getNom(){
+	return "Etat Figé";
+}

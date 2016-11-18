@@ -1,6 +1,7 @@
 #ifndef ETAT_ROBOT_A_VIDE_FACE_PLOT_H
 #define ETAT_ROBOT_A_VIDE_FACE_PLOT_H
 
+#include <string>
 #include "EtatRobotEnRoute.h"
 
 class EtatRobotAVideFacePlot : public EtatRobotEnRoute
@@ -12,6 +13,7 @@ private:
 public:
 	virtual EtatRobot* saisir();
 	static EtatRobotAVideFacePlot* getSingleton();
+	virtual std::string getNom();
 };
 
 //EtatRobotAVideFacePlot* EtatRobotAVideFacePlot::singleton=nullptr;

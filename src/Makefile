@@ -1,4 +1,4 @@
-SOURCES = Main.cpp robot.cpp position.cpp plot.cpp Objet.cpp EtatRobot.cpp EtatRobotFige.cpp EtatRobotEnRoute.cpp EtatRobotEnChargeFacePlot.cpp EtatRobotEnCharge.cpp EtatRobotAVideFacePlot.cpp EtatRobotAVide.cpp 
+SOURCES = Main.cpp robot.cpp position.cpp plot.cpp Objet.cpp EtatRobot.cpp EtatRobotFige.cpp EtatRobotEnRoute.cpp EtatRobotEnChargeFacePlot.cpp EtatRobotEnCharge.cpp EtatRobotAVideFacePlot.cpp EtatRobotAVide.cpp Afficheur.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 

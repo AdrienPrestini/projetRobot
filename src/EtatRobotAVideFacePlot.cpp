@@ -11,3 +11,7 @@ EtatRobotAVideFacePlot* EtatRobotAVideFacePlot::getSingleton(){
 EtatRobot* EtatRobotAVideFacePlot::saisir(){
 	return EtatRobotEnChargeFacePlot::getSingleton();
 }
+
+std::string EtatRobotAVideFacePlot::getNom(){
+	return "Etat à Vide en Face d'un Plot";
+}

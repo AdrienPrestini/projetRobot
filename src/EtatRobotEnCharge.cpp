@@ -19,3 +19,7 @@ EtatRobot* EtatRobotEnCharge::rencontrerPlot() {
 EtatRobotEnCharge* EtatRobotEnCharge::getSingleton() {
 	return instance;
 }
+
+std::string EtatRobotEnCharge::getNom(){
+	return "Etat En Charge";
+}

@@ -3,14 +3,17 @@
 #include <string>
 #include <iostream>
 #include <cstddef>
-using namespace std;
 
-Robot::Robot(string direction,Position pos,Plot* ptr_plot,EtatRobot* mon_etat,Objet* ptr_obj){
+using namespace std;
+int Robot::NB_OBS_MAX = 3;
+
+Robot::Robot(string direction,Position* ptr_pos,Plot* ptr_plot,EtatRobot* mon_etat,Objet* ptr_obj){
 	this->direction=direction;
-	this->pos = pos;
-	this->ptr_plot=ptr_plot;
+	this->ptr_pos = ptr_pos;
+	this->ptr_plot =ptr_plot;
 	this->ptr_obj=ptr_obj;
 	this->mon_etat=mon_etat;
+
 }
 
 void Robot::saisir(Objet* o){
@@ -36,6 +39,24 @@ void Robot::repartir(){
 	}catch(ExceptionsRobot::Repartir_Exception& e){
 		cout<< e.what()<<endl;
 	}
+}
+
+void Robot::notify(){
+	for(int i = 0; i < afficheurs.size(); i++){
+		if(this->afficheurs.at(i) != NULL)
+			this->afficheurs.at(i)->update(this);
+	}
+}
+
+void Robot::addObserver(Afficheur* a){
+	/*for(int i = 0; i < NB_OBS_MAX; i++){
+		if(this->afficheurs.at(i) == nullptr){
+			this-> afficheurs.at(i) = a;
+			return;
+		}
+		
+	}*/
+		afficheurs.push_back(a);
 }
 
 /*void Robot::avancer(int x, int y){

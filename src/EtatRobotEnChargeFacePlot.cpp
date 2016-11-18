@@ -22,3 +22,7 @@ EtatRobot* EtatRobotEnChargeFacePlot::peser(){
 EtatRobot* EtatRobotEnChargeFacePlot::evaluerPlot(){
 	 return this;
 }*/
+
+std::string EtatRobotEnChargeFacePlot::getNom(){
+	return "Etat En Charge En Face d'un Plot";
+}

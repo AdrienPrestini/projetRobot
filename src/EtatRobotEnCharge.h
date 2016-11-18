@@ -2,6 +2,7 @@
 #define _ETAT_EN_CHARGE_H_
 
 #include "EtatRobotEnRoute.h"
+#include <string>
 
 class EtatRobotEnCharge : public EtatRobotEnRoute {
 private:
@@ -15,6 +16,7 @@ public:
 	// EtatRobot* rencontrerPlot();
 	
 	static EtatRobotEnCharge* getSingleton();
+	virtual std::string getNom();
 };
 
 #endif

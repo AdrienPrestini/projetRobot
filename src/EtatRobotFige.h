@@ -2,6 +2,7 @@
 #ifndef ETAT_ROBOT_FIGE_H
 #define ETAT_ROBOT_FIGE_H
 
+#include <string>
 #include "EtatRobot.h"
 class EtatRobotEnRoute;
 
@@ -16,7 +17,7 @@ public:
 	//EtatRobot* repartir();
 	void putEtatPrecedent(EtatRobotEnRoute* e);
 	static EtatRobotFige* getSingleton();
-
+	virtual std::string getNom();
 
 };
 
