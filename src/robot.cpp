@@ -3,16 +3,17 @@
 #include <string>
 #include <iostream>
 #include <cstddef>
+#include "EtatRobotAVideFacePlot.h"
 
 using namespace std;
 int Robot::NB_OBS_MAX = 3;
 
-Robot::Robot(string direction,Position* ptr_pos,Plot* ptr_plot,EtatRobot* mon_etat,Objet* ptr_obj){
+Robot::Robot(string direction,Position* ptr_pos,Plot* ptr_plot,Objet* ptr_obj){
 	this->direction=direction;
 	this->ptr_pos = ptr_pos;
 	this->ptr_plot =ptr_plot;
 	this->ptr_obj=ptr_obj;
-	this->mon_etat=mon_etat;
+	this->mon_etat=EtatRobotAVideFacePlot::getSingleton();
 
 }
 

@@ -21,7 +21,7 @@ private:
 	EtatRobot* mon_etat;
 	std::vector<Afficheur*> afficheurs;
 public:
-	Robot(std::string direction,Position* pos,Plot* ptr_plot,EtatRobot* mon_etat,Objet* ptr_obj);
+	Robot(std::string direction,Position* pos,Plot* ptr_plot,Objet* ptr_obj);
 	void avancer(int x, int y);
 	void tourner(std::string direction);
 	void saisir(Objet* o);
