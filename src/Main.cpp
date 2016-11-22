@@ -10,16 +10,18 @@ using namespace std;
 int main(){
 	//création du robot
 	//Robot(std::string direction,Position* pos,Plot* ptr_plot,EtatRobot* mon_etat,Objet* ptr_obj);
-	Position p(0,0);
-	Plot plot(0);
-	
-	Objet o(20);
 
-	Robot robot("NORD", &p,&plot,&o);
-	cout << "coucou" << endl;
+	Robot robot;
 	Afficheur a;
 	a.addObservable(&robot);
 	robot.addObserver(&a);
+
+	a.afficher();
+
+	robot.figer();
+	robot.repartir();
+	Objet o(10);	
+	robot.saisir(&o);
 
 	
 

@@ -10,12 +10,12 @@ class EtatRobotFige : public EtatRobot
 {
 
 private:
-	EtatRobotEnRoute* etatPrecedent;
+	EtatRobot* etatPrecedent;
 	static EtatRobotFige* instance;
 public:
 	
-	//EtatRobot* repartir();
-	void putEtatPrecedent(EtatRobotEnRoute* e);
+	virtual EtatRobot* repartir();
+	void putEtatPrecedent(EtatRobot* e);
 	static EtatRobotFige* getSingleton();
 	virtual std::string getNom();
 

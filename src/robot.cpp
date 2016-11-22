@@ -17,9 +17,15 @@ Robot::Robot(string direction,Position* ptr_pos,Plot* ptr_plot,Objet* ptr_obj){
 
 }
 
+Robot::Robot(){
+	this->mon_etat=EtatRobotAVideFacePlot::getSingleton();
+	ptr_pos = new Position();
+	direction = "NORD";
+}
+
 void Robot::saisir(Objet* o){
 	try{
-		(this->mon_etat)->saisir();
+		mon_etat = mon_etat->saisir();
 		this->ptr_obj=o;
 		notify();
 	}catch(ExceptionsRobot::Saisir_Exception& e){
@@ -29,7 +35,7 @@ void Robot::saisir(Objet* o){
 
 void Robot::figer(){
 	try{
-		(this->mon_etat)->figer();
+		mon_etat = mon_etat->figer();
 		notify();
 	}catch(ExceptionsRobot::Figer_Exception& e){
 		cout<< e.what()<<endl;
@@ -38,7 +44,7 @@ void Robot::figer(){
 
 void Robot::repartir(){
 	try{
-		(this->mon_etat)->repartir();
+		mon_etat = mon_etat->repartir();
 		notify();
 	}catch(ExceptionsRobot::Repartir_Exception& e){
 		cout<< e.what()<<endl;

@@ -4,7 +4,7 @@
 
 using namespace std;
 void Afficheur::afficher(){
-	if(this->observable == NULL){
+	if(this->observable == nullptr){
 		cout << "il n'y a aucun robot à afficher" << endl;
 	}else{
 		string direction;
@@ -17,17 +17,18 @@ void Afficheur::afficher(){
 		if(observable->getDirection().compare("OUEST") == 0)
 			direction = "OUEST";
 		cout << "Info sur le Robot : " << endl;
-		if(observable->getEtat() != NULL)
+		if(observable->getEtat() != nullptr)
 			cout << "Etat actuel : " << observable->getEtat()->getNom() << endl;
-		if(observable->getPosition() != NULL)
+		if(observable->getPosition() != nullptr)
 			cout << "Position du Robot : " << *(observable->getPosition()) << endl;
 		cout << "Direction : " << direction << endl;
-		if(observable->getObjet()!= NULL)
+		if(observable->getObjet()!= nullptr)
 			cout << *(observable->getObjet()) << endl;
-		if(observable->getPlot()!=NULL)
+		if(observable->getPlot()!=nullptr)
 			cout << *(observable->getPlot()) << endl;
 
 	}
+	cout << endl;
 }
 
 void Afficheur::update(Robot* r){

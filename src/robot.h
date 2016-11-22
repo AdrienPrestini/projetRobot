@@ -10,18 +10,20 @@
 
 #include <string>
 #include <vector>
+#include <cstddef>
 class Robot
 {
 private:
 	static int NB_OBS_MAX;
 	std::string direction;
 	Position* ptr_pos;
-	Plot* ptr_plot;
-	Objet* ptr_obj;
+	Plot* ptr_plot =nullptr;
+	Objet* ptr_obj=nullptr;
 	EtatRobot* mon_etat;
 	std::vector<Afficheur*> afficheurs;
 public:
 	Robot(std::string direction,Position* pos,Plot* ptr_plot,Objet* ptr_obj);
+	Robot();
 	void avancer(int x, int y);
 	void tourner(std::string direction);
 	void saisir(Objet* o);
