@@ -54,64 +54,10 @@ void Robot::repartir(){
 void Robot::notify(){
 	for(int i = 0; i < afficheurs.size(); i++){
 		if(this->afficheurs.at(i) != NULL)
-			this->afficheurs.at(i)->update(this);
+			this->afficheurs.at(i)->afficher(this);
 	}
 }
 
 void Robot::addObserver(Afficheur* a){
-	/*for(int i = 0; i < NB_OBS_MAX; i++){
-		if(this->afficheurs.at(i) == nullptr){
-			this-> afficheurs.at(i) = a;
-			return;
-		}
-		
-	}*/
 		afficheurs.push_back(a);
 }
-
-/*void Robot::avancer(int x, int y){
-	try{
-		(this->mon_etat)->avancer();
-		this->pos.setX(x);
-		this->pos.setX(y);
-	}catch(exception& e){
-		cout<< e.what()<<endl;
-	}
-}
-	
-void Robot::tourner(string direction){
-	try{
-		(this->mon_etat)->tourner();
-		this->direction=direction;
-	}catch(exception& e){
-		cout<< e.what()<<endl;
-	}
-}
-
-
-void Robot::poser(){
-	try{
-		(this->mon_etat)->poser();
-		this->ptr_obj=nullptr;
-		this->ptr_plot=nullptr;
-	}catch(exception& e){
-		cout<< e.what()<<endl;
-	}
-}
-
-
-int Robot::peser(){
-	try{
-		(this->mon_etat)->peser();
-		if (ptr_obj!=nullptr)
-		{
-			return this->ptr_obj->getPoids();
-		}
-		
-	}catch(exception& e){
-		cout<< e.what()<<endl;
-	}
-	return 0;
-}
-
-*/

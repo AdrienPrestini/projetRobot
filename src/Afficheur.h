@@ -6,13 +6,11 @@
 class Robot;
 
 class Afficheur {
-private:
-	Robot* observable;
+
 public:
-	Afficheur():observable(NULL){}
-	void afficher();
-	void update(Robot* r);
-	void addObservable(Robot* r);
+	
+	virtual void afficher(Robot* observable) = 0;
+	
 };
 
 #endif

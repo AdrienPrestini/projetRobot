@@ -33,7 +33,6 @@ public:
 	int evaluerPlot();			/*A FAIRE*/
 	void figer();
 	void repartir();
-	void afficher();			/*A FAIRE*/
 
 	//accesseurs
 	EtatRobot* getEtat(){return mon_etat;}
