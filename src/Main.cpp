@@ -2,6 +2,7 @@
 #include "EtatRobot.h"
 #include "EtatRobotFige.h"
 #include "EtatRobotEnRoute.h"
+#include "LecteurCommande.h"
 
 #include <iostream>
 
@@ -16,15 +17,17 @@ int main(){
 	robot.addObserver(&a);
 	//affichons l'état du robot avant toute action
 	a.afficher();
-	//le robot se fige
-	robot.figer();
-	//le robot repart
-	robot.repartir();
-	//le robot saisit l'objet o
-	Objet o(10);	
-	robot.saisir(&o);
+	// //le robot se fige
+	// robot.figer();
+	// //le robot repart
+	// robot.repartir();
+	// //le robot saisit l'objet o
+	// Objet o(10);	
+	// robot.saisir(&o);
 
-	
+	LecteurCommande lc("commandes.txt");
+	lc.nextCommand();
+
 
 	return 0;
 }

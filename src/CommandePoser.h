@@ -1,5 +1,5 @@
-#ifndef _COMMANDE_AVANCER_H
-#define _COMMANDE_AVANCER_H
+#ifndef _COMMANDE_POSER_H
+#define _COMMANDE_POSER_H
 
 #include "CommandeRobot.h"
 #include "LecteurCommande.h"
@@ -10,14 +10,11 @@ class LecteurCommande;
 
 using std::string;
 
-class CommandeAvancer : public CommandeRobot {
+class CommandePoser : public CommandeRobot {
 private:
-	int lastX;
-	int lastY;
-	int x;
-	int y;
+	//static CommandePoser comPos;
 public:
-	CommandeAvancer(int xq, int yq);
+	CommandePoser();
 	virtual void execute();
 	virtual void desexecute();
 	virtual bool reversable();

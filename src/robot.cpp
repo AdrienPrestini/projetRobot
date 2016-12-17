@@ -59,26 +59,19 @@ void Robot::notify(){
 }
 
 void Robot::addObserver(Afficheur* a){
-	/*for(int i = 0; i < NB_OBS_MAX; i++){
-		if(this->afficheurs.at(i) == nullptr){
-			this-> afficheurs.at(i) = a;
-			return;
-		}
-		
-	}*/
 		afficheurs.push_back(a);
 }
 
-/*void Robot::avancer(int x, int y){
+void Robot::avancer(int x, int y){
 	try{
 		(this->mon_etat)->avancer();
-		this->pos.setX(x);
-		this->pos.setX(y);
+		this->ptr_pos->setX(x);
+		this->ptr_pos->setX(y);
 	}catch(exception& e){
 		cout<< e.what()<<endl;
 	}
 }
-	
+/*	
 void Robot::tourner(string direction){
 	try{
 		(this->mon_etat)->tourner();
@@ -87,7 +80,7 @@ void Robot::tourner(string direction){
 		cout<< e.what()<<endl;
 	}
 }
-
+*/
 
 void Robot::poser(){
 	try{
@@ -99,7 +92,7 @@ void Robot::poser(){
 	}
 }
 
-
+/*
 int Robot::peser(){
 	try{
 		(this->mon_etat)->peser();

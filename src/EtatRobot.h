@@ -9,10 +9,10 @@ private:
 	
 public:
 
-	//virtual EtatRobot* avancer();
+	virtual EtatRobot* avancer();
 	// virtual EtatRobot* tourner();
 	virtual EtatRobot* saisir();
-	// virtual EtatRobot* poser();
+	virtual EtatRobot* poser();
 	// virtual EtatRobot* peser();
 	// virtual EtatRobot* rencontrerPlot();
 	virtual EtatRobot* figer();

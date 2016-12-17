@@ -5,11 +5,24 @@ bool CommandeAvancer::reversable(){
 }
 
 void CommandeAvancer::execute(){
-	return;
+	robot->avancer(x,y);
+	lastX = x;
+	lastY = y;
+	if(reversable())
+		pileCommandes.push(this);
 }
 void CommandeAvancer::desexecute(){
-	return;
+	lastX = robot->getPosition()->getX();
+	lastY = robot->getPosition()->getY();
+	robot->avancer(lastX,lastY);
 }
-Commande* CommandeAvancer::constructeurVirtuel(string d, LecteurCommande lc){
+Commande* CommandeAvancer::constructeurVirtuel(string d, LecteurCommande* lc){
+	if(d == "AVANCER"){
+		throw string("Erreur fatale : la commande dans Avancer n'est pas 'AVANCER'. ");
+		exit(-1);
+	}
+	x = lc->readInt();
+	y = lc->readInt();
+
 	return this;
 }
