@@ -12,6 +12,5 @@ int main(){
 	LecteurCommande lc("commandes.txt");
 	lc.nextCommand();
 
-
 	return 0;
 }

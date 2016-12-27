@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstddef>
 #include "EtatRobotAVideFacePlot.h"
+#include "EtatRobotAVide.h"
 
 using namespace std;
 int Robot::NB_OBS_MAX = 3;
@@ -21,6 +22,7 @@ Robot::Robot(string direction,Position* ptr_pos,Plot* ptr_plot,Objet* ptr_obj){
 Robot::Robot(){
 	this->mon_etat=EtatRobotAVideFacePlot::getSingleton();
 	ptr_pos = new Position();
+	addObserver(new Afficheur());
 	direction = "NORD";
 }
 

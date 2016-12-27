@@ -19,7 +19,6 @@ void LecteurCommande::nextCommand(){
 int LecteurCommande::readInt(){
 	int a;
 	myFile >> a;
-	
 	return a;
 }
 
