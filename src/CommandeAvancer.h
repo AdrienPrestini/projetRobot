@@ -2,26 +2,23 @@
 #define _COMMANDE_AVANCER_H
 
 #include "CommandeRobot.h"
-#include "LecteurCommande.h"
-#include <string>
-
-class CommandeRobot;
-class LecteurCommande;
-
-using std::string;
+#include <iostream>
 
 class CommandeAvancer : public CommandeRobot {
 private:
+	static CommandeAvancer maCommande;
 	int lastX;
 	int lastY;
 	int x;
 	int y;
 public:
-	CommandeAvancer(int xq, int yq);
+	
+	CommandeAvancer(string c) : CommandeRobot(c) {}
+	CommandeAvancer(string c,int xq, int yq): CommandeRobot(c), x(xq), y(yq){}
 	virtual void execute();
 	virtual void desexecute();
 	virtual bool reversable();
-	virtual Commande* constructeurVirtuel(string d, LecteurCommande* lc);
+	virtual Commande* constructeurVirtuel(string d, LecteurCommande& lc);
 	
 };
 

@@ -1,25 +1,19 @@
 #include "LecteurCommande.h"
+#include "Commande.h"
+#include "CommandeRobot.h"
 	
-LecteurCommande::LecteurCommande(string fil){
-	commandFileName = fil;
-	myFile.open(commandFileName);
+LecteurCommande::LecteurCommande(string fileName){
+	myFile.open(fileName);
 }
 
 
-// classe non implémentée pour le moment
 void LecteurCommande::nextCommand(){
-	//STUB
-	string instruction;
-	std::cout << "on lance une commande" << std::endl;
-	std::cout << "etape 1" << std::endl;
-	myFile >> instruction;
-	std::cout << "etape 2" << std::endl;
-	Commande* c = Commande::nouvelleCommande(instruction, this);
-	std::cout << "etape création de la commande" << std::endl;
-	//c->execute();
-	std::cout << "etape execution de la commande" << std::endl;
-	myFile.close();
-	
+	string commande;
+	std::cout<< "On lit les commandes" << std::endl;
+	while(myFile >> commande){
+		Commande::nouvelleCommande(commande,(*this))->execute();	
+	}
+	std::cout<< "fin de lecture des commandes" << std::endl;
 }
 
 int LecteurCommande::readInt(){
@@ -29,15 +23,16 @@ int LecteurCommande::readInt(){
 	return a;
 }
 
-Objet LecteurCommande::readObjet(){
-	//STUB
-	return Objet(0);
-}
-Plot LecteurCommande::readPlot(){
-	//STUB
-	return Plot(0);
-}
+// Objet LecteurCommande::readObjet(){
+// 	//STUB
+// 	return Objet(0);
+// }
+// Plot LecteurCommande::readPlot(){
+// 	//STUB
+// 	return Plot(0);
+// }
 string LecteurCommande::readDirection(){
-	//STUB
-	return " ";
+	string direction;
+	myFile >> direction;
+	return direction;
 }

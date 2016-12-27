@@ -14,6 +14,7 @@ Robot::Robot(string direction,Position* ptr_pos,Plot* ptr_plot,Objet* ptr_obj){
 	this->ptr_plot =ptr_plot;
 	this->ptr_obj=ptr_obj;
 	this->mon_etat=EtatRobotAVideFacePlot::getSingleton();
+	addObserver(new Afficheur());
 
 }
 
