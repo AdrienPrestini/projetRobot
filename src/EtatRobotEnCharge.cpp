@@ -3,7 +3,7 @@
 
 EtatRobotEnCharge* EtatRobotEnCharge::instance = new EtatRobotEnCharge;
 
-/*EtatRobot* EtatRobotEnCharge::avancer() {
+EtatRobot* EtatRobotEnCharge::avancer() {
 	return this;
 }
 
@@ -13,7 +13,7 @@ EtatRobot* EtatRobotEnCharge::peser() {
 
 EtatRobot* EtatRobotEnCharge::rencontrerPlot() {
 	return EtatRobotEnChargeFacePlot::getSingleton();
-}*/
+}
 
 
 EtatRobotEnCharge* EtatRobotEnCharge::getSingleton() {

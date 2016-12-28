@@ -9,11 +9,9 @@ private:
 	static EtatRobotEnCharge* instance;
 
 public:
-	//EtatRobot* avancer();
-
-	// EtatRobot* peser();
-
-	// EtatRobot* rencontrerPlot();
+	EtatRobot* avancer();
+	EtatRobot* peser();
+	EtatRobot* rencontrerPlot();
 	
 	static EtatRobotEnCharge* getSingleton();
 	virtual std::string getNom();

@@ -3,17 +3,17 @@
 
 EtatRobotAVide* EtatRobotAVide::instance = new EtatRobotAVide;
 
-/*EtatRobot* EtatAVide::tourner(){
+EtatRobot* EtatRobotAVide::tourner(){
 	return this;
 }
-EtatRobot* EtatAVide::avancer() {
+EtatRobot* EtatRobotAVide::avancer() {
 	return this;
 }
 
-EtatRobot* EtatAVide::rencontrerPlot() {
-	return EtatAVideFacePlot::getSingleton();
+EtatRobot* EtatRobotAVide::rencontrerPlot() {
+	return EtatRobotAVideFacePlot::getSingleton();
 }
-*/
+
 
 EtatRobotAVide* EtatRobotAVide::getSingleton() {
 	return instance;

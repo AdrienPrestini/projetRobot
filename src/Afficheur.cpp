@@ -8,14 +8,14 @@ void Afficheur::afficher(){
 		cout << "il n'y a aucun robot à afficher" << endl;
 	}else{
 		string direction;
-		if(observable->getDirection().compare("NORD") == 0)
-			direction = "NORD";
-		if(observable->getDirection().compare("SUD") == 0)
-			direction = "SUD";
-		if(observable->getDirection().compare("EST") == 0)
-			direction = "EST";
-		if(observable->getDirection().compare("OUEST") == 0)
-			direction = "OUEST";
+		if(observable->getDirection().compare("N") == 0)
+			direction = "N";
+		if(observable->getDirection().compare("S") == 0)
+			direction = "S";
+		if(observable->getDirection().compare("E") == 0)
+			direction = "E";
+		if(observable->getDirection().compare("O") == 0)
+			direction = "O";
 		cout << "Info sur le Robot : " << endl;
 		if(observable->getEtat() != nullptr)
 			cout << "Etat actuel : " << observable->getEtat()->getNom() << endl;

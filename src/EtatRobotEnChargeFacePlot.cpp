@@ -10,7 +10,7 @@ EtatRobotEnChargeFacePlot* EtatRobotEnChargeFacePlot::getSingleton(){
 }
 
 
-/*EtatRobot* EtatRobotEnChargeFacePlot::poser(){
+EtatRobot* EtatRobotEnChargeFacePlot::poser(){
 	return EtatRobotAVideFacePlot::getSingleton();
 }
 
@@ -21,8 +21,12 @@ EtatRobot* EtatRobotEnChargeFacePlot::peser(){
 
 EtatRobot* EtatRobotEnChargeFacePlot::evaluerPlot(){
 	 return this;
-}*/
+}
 
+
+EtatRobot* EtatRobotEnChargeFacePlot::tourner(){
+	return this;
+}
 std::string EtatRobotEnChargeFacePlot::getNom(){
 	return "Etat En Charge En Face d'un Plot";
 }

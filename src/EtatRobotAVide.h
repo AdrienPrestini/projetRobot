@@ -9,11 +9,11 @@ private:
 	static EtatRobotAVide* instance;
 
 public:
-	//virtual EtatRobot* tourner();
+	virtual EtatRobot* tourner();
 
-	//virtual EtatRobot* avancer();
+	virtual EtatRobot* avancer();
 
-	//virtual EtatRobot* rencontrerPlot();
+	virtual EtatRobot* rencontrerPlot();
 
 	static EtatRobotAVide* getSingleton();
 	virtual std::string getNom();

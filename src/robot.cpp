@@ -9,21 +9,20 @@
 using namespace std;
 int Robot::NB_OBS_MAX = 3;
 
-Robot::Robot(string direction,Position* ptr_pos,Plot* ptr_plot,Objet* ptr_obj){
-	this->direction=direction;
-	this->ptr_pos = ptr_pos;
-	this->ptr_plot =ptr_plot;
-	this->ptr_obj=ptr_obj;
-	this->mon_etat=EtatRobotAVideFacePlot::getSingleton();
-	addObserver(new Afficheur());
-
-}
+// Robot::Robot(string direction,Position* ptr_pos,Plot* ptr_plot,Objet* ptr_obj){
+// 	this->direction=direction;
+// 	this->ptr_pos = ptr_pos;
+// 	this->ptr_plot =ptr_plot;
+// 	this->ptr_obj=ptr_obj;
+// 	this->mon_etat=EtatRobotAVideFacePlot::getSingleton();
+// 	addObserver(new Afficheur());
+// }
 
 Robot::Robot(){
 	this->mon_etat=EtatRobotAVideFacePlot::getSingleton();
 	ptr_pos = new Position();
 	addObserver(new Afficheur());
-	direction = "NORD";
+	direction = "N";
 }
 
 void Robot::saisir(Objet* o){
@@ -74,7 +73,7 @@ void Robot::avancer(int x, int y){
 		cout<< e.what()<<endl;
 	}
 }
-/*	
+	
 void Robot::tourner(string direction){
 	try{
 		(this->mon_etat)->tourner();
@@ -83,7 +82,7 @@ void Robot::tourner(string direction){
 		cout<< e.what()<<endl;
 	}
 }
-*/
+
 
 void Robot::poser(){
 	try{
@@ -95,7 +94,6 @@ void Robot::poser(){
 	}
 }
 
-/*
 int Robot::peser(){
 	try{
 		(this->mon_etat)->peser();
@@ -110,4 +108,3 @@ int Robot::peser(){
 	return 0;
 }
 
-*/

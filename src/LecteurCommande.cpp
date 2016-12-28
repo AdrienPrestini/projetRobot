@@ -1,6 +1,6 @@
 #include "LecteurCommande.h"
 #include "Commande.h"
-#include "CommandeRobot.h"
+//#include "CommandeRobot.h"
 	
 LecteurCommande::LecteurCommande(string fileName){
 	myFile.open(fileName);
@@ -11,6 +11,7 @@ void LecteurCommande::nextCommand(){
 	string commande;
 	std::cout<< "On lit les commandes" << std::endl;
 	while(myFile >> commande){
+		std::cout<< "tour" << std::endl;
 		Commande::nouvelleCommande(commande,(*this))->execute();	
 	}
 	std::cout<< "fin de lecture des commandes" << std::endl;

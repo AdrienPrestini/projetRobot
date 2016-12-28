@@ -11,10 +11,11 @@ class EtatRobotEnChargeFacePlot : public EtatRobotEnRoute
 private:
 	static EtatRobotEnChargeFacePlot* instance;
 public:
-	// virtual EtatRobot* poser();
-	// virtual EtatRobot* peser();
-	// virtual EtatRobot* evaluerPlot();
-	// virtual EtatRobot* tourner();
+	virtual EtatRobot* poser();
+	virtual EtatRobot* peser();
+	virtual EtatRobot* evaluerPlot();
+	virtual EtatRobot* tourner();
+	
 	static EtatRobotEnChargeFacePlot* getSingleton();
 	virtual std::string getNom();
 
