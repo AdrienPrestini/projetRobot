@@ -2,11 +2,10 @@
 #include "EtatRobotAVideFacePlot.h"
 #include "EtatRobotEnCharge.h"
 
-EtatRobotEnChargeFacePlot* EtatRobotEnChargeFacePlot::instance = new EtatRobotEnChargeFacePlot;
-
 
 EtatRobotEnChargeFacePlot* EtatRobotEnChargeFacePlot::getSingleton(){
-	return instance;
+	static EtatRobotEnChargeFacePlot* instance = new EtatRobotEnChargeFacePlot();
+    return instance;
 }
 
 
@@ -15,17 +14,17 @@ EtatRobot* EtatRobotEnChargeFacePlot::poser(){
 }
 
 EtatRobot* EtatRobotEnChargeFacePlot::peser(){
-	 return this;
+	 return getSingleton();
 }
 
 
 EtatRobot* EtatRobotEnChargeFacePlot::evaluerPlot(){
-	 return this;
+	 return getSingleton();
 }
 
 
 EtatRobot* EtatRobotEnChargeFacePlot::tourner(){
-	return this;
+	return getSingleton();
 }
 std::string EtatRobotEnChargeFacePlot::getNom(){
 	return "Etat En Charge En Face d'un Plot";

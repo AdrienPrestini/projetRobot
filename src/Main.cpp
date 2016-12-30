@@ -27,10 +27,8 @@ int main(){
 
 
 	cout << "ouverture du ficher de commande " << endl;
-	LecteurCommande l("commandes.txt");
+	LecteurCommande l("./commandes.txt");
 	l.nextCommand();
-
-
 
 	
 

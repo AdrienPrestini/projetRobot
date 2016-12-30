@@ -15,6 +15,7 @@ public:
 	virtual EtatRobot* poser();
 	virtual EtatRobot* peser();
 	virtual EtatRobot* rencontrerPlot();
+	virtual EtatRobot* evaluerPlot();
 	virtual EtatRobot* figer();
 	virtual EtatRobot* afficher();
 	virtual EtatRobot* repartir();

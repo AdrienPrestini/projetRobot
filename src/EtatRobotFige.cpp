@@ -1,13 +1,13 @@
 #include "EtatRobotFige.h"
 
-EtatRobotFige* EtatRobotFige::instance = new EtatRobotFige;
 
 void EtatRobotFige::putEtatPrecedent(EtatRobot* e){
 	etatPrecedent = e;
 }
 
 EtatRobotFige* EtatRobotFige::getSingleton(){
-	return instance;
+	static EtatRobotFige* instance = new EtatRobotFige();
+    return instance;
 }
 
 EtatRobot* EtatRobotFige::repartir(){

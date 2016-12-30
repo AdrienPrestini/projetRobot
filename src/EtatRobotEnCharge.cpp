@@ -1,14 +1,13 @@
 #include "EtatRobotEnCharge.h"
 #include "EtatRobotEnChargeFacePlot.h"
 
-EtatRobotEnCharge* EtatRobotEnCharge::instance = new EtatRobotEnCharge;
 
 EtatRobot* EtatRobotEnCharge::avancer() {
-	return this;
+	return getSingleton();
 }
 
 EtatRobot* EtatRobotEnCharge::peser() {
-	return this;
+	return getSingleton();
 }
 
 EtatRobot* EtatRobotEnCharge::rencontrerPlot() {
@@ -17,7 +16,8 @@ EtatRobot* EtatRobotEnCharge::rencontrerPlot() {
 
 
 EtatRobotEnCharge* EtatRobotEnCharge::getSingleton() {
-	return instance;
+	static EtatRobotEnCharge* instance = new EtatRobotEnCharge();
+    return instance;
 }
 
 std::string EtatRobotEnCharge::getNom(){

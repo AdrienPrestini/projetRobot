@@ -1,13 +1,14 @@
 #include "EtatRobotAVide.h"
 #include "EtatRobotAVideFacePlot.h"
+#include <iostream>
 
-EtatRobotAVide* EtatRobotAVide::instance = new EtatRobotAVide;
+
 
 EtatRobot* EtatRobotAVide::tourner(){
-	return this;
+	return getSingleton();
 }
 EtatRobot* EtatRobotAVide::avancer() {
-	return this;
+	return getSingleton();
 }
 
 EtatRobot* EtatRobotAVide::rencontrerPlot() {
@@ -16,7 +17,8 @@ EtatRobot* EtatRobotAVide::rencontrerPlot() {
 
 
 EtatRobotAVide* EtatRobotAVide::getSingleton() {
-	return instance;
+	static EtatRobotAVide* instance = new EtatRobotAVide();
+    return instance;
 }
 
 std::string EtatRobotAVide::getNom(){

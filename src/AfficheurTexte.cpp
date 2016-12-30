@@ -4,6 +4,7 @@
 
 using namespace std;
 void AfficheurTexte::afficher(Robot* observable){
+	cout << "coucou afficher" << endl;
 	if(observable == nullptr){
 		cout << "il n'y a aucun robot à afficher" << endl;
 	}else{

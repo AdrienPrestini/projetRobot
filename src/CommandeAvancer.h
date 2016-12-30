@@ -18,7 +18,7 @@ public:
 	virtual void execute();
 	virtual void desexecute();
 	virtual bool reversable();
-	virtual Commande* constructeurVirtuel(string d, LecteurCommande& lc);
+	virtual Commande* constructeurVirtuel(string d, LecteurCommande* lc);
 	
 };
 

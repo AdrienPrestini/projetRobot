@@ -7,10 +7,14 @@
 
 using std::string;
 
-class CommandeRobot : public Commande {
+class CommandeRobot : public Commande 
+{
 protected:
-	static Robot robot;
+	static Robot* robot;
+public:
+	
 	CommandeRobot(string name): Commande(name){}
+	Robot* getRobot(){return robot;}
 };
 
 #endif

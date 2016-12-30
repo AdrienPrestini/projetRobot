@@ -1,3 +1,3 @@
 #include "CommandeRobot.h"
 
-Robot CommandeRobot::robot = Robot();
+Robot* CommandeRobot::robot = new Robot();

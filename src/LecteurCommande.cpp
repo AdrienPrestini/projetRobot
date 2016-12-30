@@ -8,13 +8,20 @@ LecteurCommande::LecteurCommande(string fileName){
 
 
 void LecteurCommande::nextCommand(){
+	
+	if(myFile.is_open())
+		std::cout<< "On lit les commandes" << std::endl;
+	else
+		std::cout<< "On ne lit pas les commandes" << std::endl;
 	string commande;
-	std::cout<< "On lit les commandes" << std::endl;
+	
 	while(myFile >> commande){
-		std::cout<< "tour" << std::endl;
-		Commande::nouvelleCommande(commande,(*this))->execute();	
+			
+		Commande* c = Commande::nouvelleCommande(commande,this);
+		c->execute();
 	}
 	std::cout<< "fin de lecture des commandes" << std::endl;
+	myFile.close();
 }
 
 int LecteurCommande::readInt(){

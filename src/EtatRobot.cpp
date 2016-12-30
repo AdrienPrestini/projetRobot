@@ -10,6 +10,7 @@ EtatRobot* EtatRobot::poser(){throw ExceptionsRobot::Poser_Exception();}
 EtatRobot* EtatRobot::peser(){throw ExceptionsRobot::Peser_Exception();}
 EtatRobot* EtatRobot::rencontrerPlot(){throw ExceptionsRobot::RencontrerPlot_Exception();}
 EtatRobot* EtatRobot::figer(){throw ExceptionsRobot::Figer_Exception();}
+EtatRobot* EtatRobot::evaluerPlot(){throw ExceptionsRobot::EvaluerPlot_Exception();}
 
 EtatRobot* EtatRobot::afficher(){return this ;}
 

@@ -45,8 +45,8 @@ public:
     public:
         const char* what() const throw () {return "erreur RencontrerPlot_Exception";}
     };
-	
 
+    
 	class Peser_Exception : public std::exception
     {
     public:
