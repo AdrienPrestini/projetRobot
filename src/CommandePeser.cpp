@@ -3,7 +3,7 @@
 CommandePeser CommandePeser::maCommande("PESER");
 
 bool CommandePeser::reversable(){
-	return false;
+	return true;
 }
 
 void CommandePeser::execute() {

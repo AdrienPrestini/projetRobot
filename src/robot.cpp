@@ -21,20 +21,23 @@ int Robot::NB_OBS_MAX = 3;
 // }
 
 Robot::Robot(){
+
 	this->mon_etat=EtatRobotAVide::getSingleton();
 	ptr_pos = new Position();
-	//AfficheurTexte a;
-	//addObserver(&a);
+	AfficheurTexte a;
+	addObserver(&a);
 	//a.addObservable(this);
 	direction = "N";
+	notify();
 }
 
 void Robot::saisir(Objet* o){
 	try{
+		cout << "je saisis" << endl;
 		mon_etat = mon_etat->saisir();
 		this->ptr_obj=o;
 		notify();
-		cout << "je saisis" << endl;
+		
 	}catch(ExceptionsRobot::Saisir_Exception& e){
 		cout<< e.what()<<endl;
 	}
@@ -42,9 +45,10 @@ void Robot::saisir(Objet* o){
 
 void Robot::figer(){
 	try{
+		cout << "je suis figé" << endl;
 		mon_etat = mon_etat->figer();
 		notify();
-		cout << "je suis figé" << endl;
+		
 	}catch(ExceptionsRobot::Figer_Exception& e){
 		cout<< e.what()<<endl;
 	}
@@ -52,9 +56,10 @@ void Robot::figer(){
 
 void Robot::repartir(){
 	try{
+		cout << "je repars" << endl;
 		mon_etat = mon_etat->repartir();
 		notify();
-		cout << "je repars" << endl;
+		
 	}catch(ExceptionsRobot::Repartir_Exception& e){
 		cout<< e.what()<<endl;
 	}
@@ -68,17 +73,19 @@ void Robot::notify(){
 }
 
 void Robot::addObserver(Afficheur* a){
+	if( a != nullptr)
 		afficheurs.push_back(a);
 }
 
 void Robot::avancer(int x, int y){
 	try{
+		cout << "J'avance en " << x << " " << y << endl;
 		(this->mon_etat)->avancer();
 		this->ptr_pos->setX(x);
 		this->ptr_pos->setY(y);
 		
 		notify();
-		cout << "J'avance en " << x << " " << y << endl;
+		
 	}catch(exception& e){
 		cout<< e.what()<<endl;
 	}
@@ -86,9 +93,10 @@ void Robot::avancer(int x, int y){
 	
 void Robot::tourner(string direction){
 	try{
+		cout << "je tourne vers " << direction << endl;
 		(this->mon_etat)->tourner();
 		this->direction=direction;
-		cout << "je tourne vers " << direction << endl;
+		
 	}catch(exception& e){
 		cout<< e.what()<<endl;
 	}
@@ -97,10 +105,11 @@ void Robot::tourner(string direction){
 
 void Robot::poser(){
 	try{
+		cout << "je pose" << endl;
 		(this->mon_etat)->poser();
 		this->ptr_obj=nullptr;
 		this->ptr_plot=nullptr;
-		cout << "je pose" << endl;
+		
 	}catch(exception& e){
 		cout<< e.what()<<endl;
 	}
@@ -122,10 +131,11 @@ int Robot::peser(){
 }
 
 int Robot::evaluerPlot(){
-    try {       
+    try {   
+     	cout << endl << "j'evalue un plot" << endl;    
         mon_etat = mon_etat->evaluerPlot();
         notify();
-        cout << endl << "j'evalue un plot ---" << endl;
+       
     }
     catch(exception& e){
 		cout<< e.what()<<endl;

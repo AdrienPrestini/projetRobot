@@ -3,7 +3,7 @@
 CommandeEvaluerPlot CommandeEvaluerPlot::maCommande("EVALUERPLOT");
 
 bool CommandeEvaluerPlot::reversable(){
-	return false;
+	return true;
 }
 void CommandeEvaluerPlot::execute() {
 	CommandeRobot::robot->evaluerPlot();

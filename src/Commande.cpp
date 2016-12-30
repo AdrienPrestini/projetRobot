@@ -1,8 +1,9 @@
 #include "Commande.h"
 #include <iostream>
 
+stack<Commande*>* Commande::pileCommandes = new stack<Commande*>;
+
 Commande::Commande(string c){
-	
 	cmdInscrites()[c] = this;
 }
 

@@ -13,18 +13,15 @@ using std::stack;
 
 class Commande 
 {
-private:
-
 protected:
-	//bool reversable = true;
-	//ajouter la pile de commande pour faire le desexecute
-	stack<Commande*> pileCommandes;
+	static stack<Commande*>* pileCommandes;
 public:
 	Commande(string commandeName);
 	virtual bool reversable() = 0;
 	virtual void execute() = 0;
 	virtual void desexecute() = 0;
 	virtual Commande* constructeurVirtuel(string d, LecteurCommande* lc) = 0;
+	//static stack<Commande*>& pileCommandes();
 	static map<string, Commande*>& cmdInscrites();
 	static Commande* nouvelleCommande(string d,LecteurCommande* lc);
 };
